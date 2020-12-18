@@ -18,6 +18,9 @@ const Layout = ({ children }) => {
       site {
         siteMetadata {
           title
+          owner
+          author
+          authorGitHub
         }
       }
     }
@@ -37,7 +40,7 @@ const Layout = ({ children }) => {
         <footer style={{
           marginTop: `2rem`
         }}>
-          © {new Date().getFullYear()}, Built with
+          © {new Date().getFullYear()} {data.site.siteMetadata?.owner}, Built by <a href={data.site.siteMetadata?.authorGitHub}>{data.site.siteMetadata?.author}</a>, Built with
           {` `}
           <a href="https://www.gatsbyjs.com">Gatsby</a>
         </footer>
