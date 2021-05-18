@@ -2,9 +2,66 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import Image from "./image.js"
+import Button from '@material-ui/core/Button';
+import MenuIcon from '@material-ui/icons/Menu';
+import { useMediaQuery } from 'react-responsive';
+import MobileMenu from './mobileMenu.js';
 
-const Header = ({ siteTitle }) => (
-  <header
+const Header = ({ siteTitle }) => {
+  const isMobile = useMediaQuery({ query: '(max-device-width: 480px)' })
+  const [show, setShow] = React.useState(false);
+
+  const handleClick = () => {
+    if(show){
+      setShow(false)
+    }else{
+      setShow(true)
+    }
+  };
+
+
+
+  return (isMobile ?
+<header
+    style={{
+      background: `#cb3033`,
+      marginBottom: `1.45rem`,
+    }}
+  >
+    <div
+      style={{
+        display: `flex`,
+        flexDirection: `column`
+      }}>
+    <div
+      style={{
+        padding: `0 1.0875rem`,
+        display: "flex",
+        justifyContent: "space-between",
+        flexDirection: "row"
+      }}
+    >
+
+      <div style={{ minWidth: `100px`, maxWidth: `300px`, marginRight: `auto`}}>
+        <Link
+          to="/"
+          style={{
+            color: `#f6e637`,
+            textDecoration: `none`,
+          }}
+        >
+          <Image alt={siteTitle}  />
+
+        </Link>
+        </div>
+        <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+          <MenuIcon style={{color: `#f6e637`}}/>
+        </Button>
+        </div>
+        {show && <MobileMenu />}
+    </div>
+  </header>    :
+    <header
     style={{
       background: `#cb3033`,
       marginBottom: `1.45rem`,
@@ -61,8 +118,8 @@ const Header = ({ siteTitle }) => (
         </Link>
         </div>
     </div>
-  </header>
-)
+  </header>)
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
