@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import MenuIcon from '@material-ui/icons/Menu';
 import { useMediaQuery } from 'react-responsive';
 import MobileMenu from './mobileMenu.js';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 const Header = ({ siteTitle }) => {
   const isMobile = useMediaQuery({ query: '(max-device-width: 480px)' })
@@ -115,6 +116,17 @@ const Header = ({ siteTitle }) => {
           }}
         >
         Dinner Menu
+        </Link>
+        <Link
+          to="/shopping-cart"
+          style={{
+            color: `#f6e637`,
+            textDecoration: `none`,
+            margin: `auto 0`,
+            padding: `10px`
+          }}
+        >
+          <ShoppingCartIcon/>
         </Link>
         </div>
     </div>

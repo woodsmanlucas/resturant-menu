@@ -1,5 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+
 
 const MobileMenu = () => {
     return <>
@@ -26,6 +28,17 @@ const MobileMenu = () => {
     >
     Dinner Menu
     </Link>
+    <Link
+          to="/shopping-cart"
+          style={{
+            color: `#f6e637`,
+            textDecoration: `none`,
+            margin: `auto 0`,
+            padding: `10px`
+          }}
+        >
+          <ShoppingCartIcon/>
+        </Link>
     </>
 }
 
