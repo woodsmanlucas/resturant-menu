@@ -5,7 +5,7 @@ import Breakfast from '../components/breakfast'
 const DinnerPage = () => (
     <Layout>
     <h1>
-        Welcome to the Breakfast page
+        Breakfast Menu
     </h1>
     <Breakfast/>
     </Layout>
