@@ -36,7 +36,7 @@ export default function Breakfast(props) {
   return (
     <StaticQuery
       query={graphql`
-        query ProductPrices {
+        query Breakfast {
           prices: allStripePrice(
             filter: { active: { eq: true } }
             sort: { fields: [unit_amount] }
