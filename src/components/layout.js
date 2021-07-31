@@ -27,7 +27,15 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+        <CartProvider
+        mode="client-only"
+        stripe={stripePromise}
+        successUrl={`${window.location.origin}/page-2/`}
+        cancelUrl={`${window.location.origin}/`}
+        currency="USD"
+        allowedCountries={['US', 'GB', 'CA']}
+        billingAddressCollection={true}
+      >
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
         style={{
@@ -45,7 +53,7 @@ const Layout = ({ children }) => {
           <a href="https://www.gatsbyjs.com">Gatsby</a>
         </footer>
       </div>
-    </>
+      </CartProvider>
   )
 }
 

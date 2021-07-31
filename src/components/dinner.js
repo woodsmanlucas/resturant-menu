@@ -9,6 +9,9 @@ import CardActions from '@material-ui/core/CardActions';
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
 import { useMediaQuery } from 'react-responsive';
+import { useShoppingCart } from 'use-shopping-cart'
+
+
 
 
 const useStyles = makeStyles({
@@ -32,6 +35,7 @@ export default function Dinner(props) {
     flexDirection = "row"
     gridWidth = 4
   }
+  const { addItem } = useShoppingCart()
 
   return (
     <StaticQuery
@@ -61,6 +65,7 @@ export default function Dinner(props) {
         }
       `}
       render={({ prices }) => (
+
         <Grid container spacing={2} direction={flexDirection} justify="center" alignItems="center">
           {prices.edges.map(({ node: price }) => (
             price.product.metadata.Menu === "Dinner" &&

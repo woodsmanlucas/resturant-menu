@@ -1,12 +1,13 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
+import React, { useState } from "react"
 import Image from "./image.js"
 import Button from '@material-ui/core/Button';
 import MenuIcon from '@material-ui/icons/Menu';
 import { useMediaQuery } from 'react-responsive';
 import MobileMenu from './mobileMenu.js';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import { useShoppingCart } from "use-shopping-cart";
 
 const Header = ({ siteTitle }) => {
   const isMobile = useMediaQuery({ query: '(max-device-width: 480px)' })
@@ -20,6 +21,14 @@ const Header = ({ siteTitle }) => {
     }
   };
 
+  const [loading, setLoading] = useState(false)
+  /* Gets the totalPrice and a method for redirecting to stripe */
+  const {
+    formattedTotalPrice,
+    redirectToCheckout,
+    cartCount,
+    clearCart,
+  } = useShoppingCart()
 
 
   return (isMobile ?
@@ -117,7 +126,7 @@ const Header = ({ siteTitle }) => {
         >
         Dinner Menu
         </Link>
-        <Link
+        <Button
           to="/shopping-cart"
           style={{
             color: `#f6e637`,
@@ -125,9 +134,17 @@ const Header = ({ siteTitle }) => {
             margin: `auto 0`,
             padding: `10px`
           }}
+          disabled={loading}
+          onClick={() => {
+            setLoading(true)
+            redirectToCheckout()
+          }}
         >
-          <ShoppingCartIcon/>
-        </Link>
+          {loading ?
+          'Loading...'
+          :
+          <ShoppingCartIcon/>}
+        </Button>
         </div>
     </div>
   </header>)
