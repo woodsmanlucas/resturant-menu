@@ -67,7 +67,15 @@ export default function Dinner(props) {
       render={({ prices }) => (
 
         <Grid container spacing={2} direction={flexDirection} justify="center" alignItems="center">
-          {prices.edges.map(({ node: price }) => (
+          {prices.edges.map(({ node: price }) => {
+                        const newSKU = {
+                          sku: price.id,
+                          name: price.product.name,
+                          price: price.unit_amount,
+                          currency: price.currency
+                        }
+
+            return(
             price.product.metadata.Menu === "Dinner" &&
             <Grid key={price.id} item xs={gridWidth}>
             <Card className={classes.root}>
@@ -78,11 +86,11 @@ export default function Dinner(props) {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button size="small" color="primary">Add to Cart</Button>
+                <Button size="small" color="primary" onClick={() => addItem(newSKU)}>Add to Cart</Button>
               </CardActions>
             </Card>
             </Grid>
-          ))}
+          )})}
         </Grid>
       )}
     />

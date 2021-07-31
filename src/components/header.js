@@ -26,7 +26,6 @@ const Header = ({ siteTitle }) => {
   const {
     formattedTotalPrice,
     redirectToCheckout,
-    cartCount,
     clearCart,
   } = useShoppingCart()
 
@@ -145,9 +144,29 @@ const Header = ({ siteTitle }) => {
           :
           <ShoppingCartIcon/>}
         </Button>
-        <p>
+        <p
+                  style={{
+                    color: `#f6e637`,
+                    textDecoration: `none`,
+                    margin: `auto 0`,
+                    padding: `10px`
+                  }}>
           {formattedTotalPrice}
         </p>
+        <Button
+          to="/shopping-cart"
+          style={{
+            color: `#f6e637`,
+            margin: `auto 0`,
+            padding: `10px`
+          }}
+          disabled={loading}
+          onClick={() => {
+            clearCart()
+          }}
+        >
+          Clear Cart
+        </Button>
         </div>
     </div>
   </header>)

@@ -7,7 +7,7 @@ module.exports = {
     title: `Max's World Cafe`,
     description: `A site for the restraunt Max's World Cafe`,
     author: `Lucas Johnson`,
-    authorGitHub: `https://github.com/woodsmanlucas`,
+    authorGitHub: `https://woodsmanlucas.github.io`,
     owner: `Max's World Cafe`
   },
   plugins: [
