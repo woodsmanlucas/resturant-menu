@@ -11,6 +11,9 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
+import { CartProvider } from 'use-shopping-cart'
+
+const stripekey = process.env.STRIPE_PUBLISHABLE_KEY
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -28,9 +31,10 @@ const Layout = ({ children }) => {
 
   return (
         <CartProvider
-        mode="client-only"
-        stripe={stripePromise}
-        successUrl={`${window.location.origin}/page-2/`}
+        mode="payment"
+        cartMode="client-only"
+        stripe={stripekey}
+        successUrl={`${window.location.origin}/success/`}
         cancelUrl={`${window.location.origin}/`}
         currency="USD"
         allowedCountries={['US', 'GB', 'CA']}

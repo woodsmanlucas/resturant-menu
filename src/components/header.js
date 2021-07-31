@@ -145,6 +145,9 @@ const Header = ({ siteTitle }) => {
           :
           <ShoppingCartIcon/>}
         </Button>
+        <p>
+          {formattedTotalPrice}
+        </p>
         </div>
     </div>
   </header>)
