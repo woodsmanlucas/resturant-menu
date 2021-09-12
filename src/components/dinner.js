@@ -53,7 +53,7 @@ export default function Dinner(props) {
                 unit_amount
                 product {
                   id
-                  images
+                  description
                   name
                   metadata {
                     Menu
@@ -72,6 +72,7 @@ export default function Dinner(props) {
                           sku: price.id,
                           name: price.product.name,
                           price: price.unit_amount,
+                          description: price.product.description,
                           currency: price.currency
                         }
 
@@ -82,7 +83,8 @@ export default function Dinner(props) {
               <CardActionArea>
                 {price.product.images && price.product.images.length > 0 && <CardMedia className={classes.media} image={price.product.images[0]} title={price.product.name}/>}
                 <CardContent>
-                <p>{price.product.name}</p>
+                <h4>{price.product.name}</h4>
+                <p>{price.product.description}</p>
                 </CardContent>
               </CardActionArea>
               <CardActions>

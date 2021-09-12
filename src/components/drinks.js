@@ -12,6 +12,8 @@ import { useMediaQuery } from 'react-responsive';
 import { useShoppingCart } from 'use-shopping-cart'
 
 
+
+
 const useStyles = makeStyles({
   root: {
     width: 200,
@@ -21,7 +23,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Breakfast(props) {
+export default function Drinks(props) {
   const classes = useStyles();
   const isMobile = useMediaQuery({ query: '(max-device-width: 480px)' })
   var flexDirection;
@@ -35,11 +37,10 @@ export default function Breakfast(props) {
   }
   const { addItem } = useShoppingCart()
 
-
   return (
     <StaticQuery
       query={graphql`
-        query Breakfast {
+        query Drinks {
           prices: allStripePrice(
             filter: { active: { eq: true } }
             sort: { fields: [unit_amount] }
@@ -64,18 +65,19 @@ export default function Breakfast(props) {
         }
       `}
       render={({ prices }) => (
+
         <Grid container spacing={2} direction={flexDirection} justify="center" alignItems="center">
           {prices.edges.map(({ node: price }) => {
-            const newSKU = {
-              sku: price.id,
-              name: price.product.name,
-              description: price.product.description,
-              price: price.unit_amount,
-              currency: price.currency
-            }
+                        const newSKU = {
+                          sku: price.id,
+                          name: price.product.name,
+                          price: price.unit_amount,
+                          description: price.product.description,
+                          currency: price.currency
+                        }
 
-            return (
-            price.product.metadata.Menu === "Breakfast" &&
+            return(
+            price.product.metadata.Menu === "Drinks" &&
             <Grid key={price.id} item xs={gridWidth}>
             <Card className={classes.root}>
               <CardActionArea>
@@ -86,9 +88,7 @@ export default function Breakfast(props) {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button size="small" color="primary" onClick={() => {console.log(price); addItem(newSKU)}}>
-                  Add to Cart
-                </Button>
+                <Button size="small" color="primary" onClick={() => addItem(newSKU)}>Add to Cart</Button>
               </CardActions>
             </Card>
             </Grid>

@@ -125,6 +125,28 @@ const Header = ({ siteTitle }) => {
         >
         Dinner Menu
         </Link>
+        <Link
+          to="/lunch-menu"
+          style={{
+            color: `#f6e637`,
+            textDecoration: `none`,
+            margin: `auto 0`,
+            padding: `10px`
+          }}
+        >
+        Lunch Menu
+        </Link>
+        <Link
+          to="/drinks-menu"
+          style={{
+            color: `#f6e637`,
+            textDecoration: `none`,
+            margin: `auto 0`,
+            padding: `10px`
+          }}
+        >
+        Drinks Menu
+        </Link>
         <Button
           to="/shopping-cart"
           style={{
@@ -153,7 +175,7 @@ const Header = ({ siteTitle }) => {
                   }}>
           {formattedTotalPrice}
         </p>
-        <Button
+        {/* <Button
           to="/shopping-cart"
           style={{
             color: `#f6e637`,
@@ -166,7 +188,7 @@ const Header = ({ siteTitle }) => {
           }}
         >
           Clear Cart
-        </Button>
+        </Button> */}
         </div>
     </div>
   </header>)

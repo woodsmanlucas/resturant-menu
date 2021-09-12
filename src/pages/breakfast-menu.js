@@ -4,7 +4,7 @@ import Breakfast from '../components/breakfast'
 
 
 
-const DinnerPage = () => (
+const BreakfastPage = () => (
     <Layout>
     <h1>
         Breakfast Menu
@@ -15,4 +15,4 @@ const DinnerPage = () => (
     </Layout>
 )
 
-export default DinnerPage
+export default BreakfastPage
