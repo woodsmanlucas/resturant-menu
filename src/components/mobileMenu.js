@@ -5,7 +5,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 const MobileMenu = () => {
     return <>
-    <Link
+    {/* <Link
       to="/breakfast-menu"
       style={{
         color: `#f6e637`,
@@ -27,7 +27,7 @@ const MobileMenu = () => {
       }}
     >
     Dinner Menu
-    </Link>
+    </Link> */}
     <Link
       to="/lunch-menu"
       style={{

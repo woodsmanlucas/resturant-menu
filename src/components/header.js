@@ -102,7 +102,7 @@ const Header = ({ siteTitle }) => {
           display: 'flex',
           padding: '0 50px'
           }}>
-        <Link
+        {/* <Link
           to="/breakfast-menu"
           style={{
             color: `#f6e637`,
@@ -124,7 +124,7 @@ const Header = ({ siteTitle }) => {
           }}
         >
         Dinner Menu
-        </Link>
+        </Link> */}
         <Link
           to="/lunch-menu"
           style={{

@@ -81,7 +81,7 @@ export default function Breakfast(props) {
               <CardActionArea>
                 {price.product.images && price.product.images.length > 0 && <CardMedia className={classes.media} image={price.product.images[0]} title={price.product.name}/>}
                 <CardContent>
-                <h4>{price.product.name}</h4>
+                <h4>{price.product.name} -${price.unit_amount/ 100}</h4>
                 <p>{price.product.description}</p>
                 </CardContent>
               </CardActionArea>
