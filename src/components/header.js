@@ -102,8 +102,8 @@ const Header = ({ siteTitle }) => {
           display: 'flex',
           padding: '0 50px'
           }}>
-        {/* <Link
-          to="/breakfast-menu"
+        <Link
+          to="/spices"
           style={{
             color: `#f6e637`,
             textDecoration: `none`,
@@ -112,7 +112,7 @@ const Header = ({ siteTitle }) => {
             padding: '10px'
           }}
         >
-        Breakfast Menu
+          Spices, Hot Sauce, Seasoning and Rubs
         </Link>
         <Link
           to="/dinner-menu"
@@ -124,9 +124,9 @@ const Header = ({ siteTitle }) => {
           }}
         >
         Dinner Menu
-        </Link> */}
+        </Link>
         <Link
-          to="/lunch-menu"
+          to="/dessert-menu"
           style={{
             color: `#f6e637`,
             textDecoration: `none`,
@@ -134,7 +134,7 @@ const Header = ({ siteTitle }) => {
             padding: `10px`
           }}
         >
-        Lunch Menu
+        Dessert Menu
         </Link>
         <Link
           to="/drinks-menu"

@@ -1,15 +1,17 @@
-import React from "react";
-import { graphql, StaticQuery } from "gatsby";
+import React from "react"
+import { graphql, StaticQuery } from "gatsby"
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
-import Grid from '@material-ui/core/Grid';
+import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
 import { useMediaQuery } from 'react-responsive';
-import { useShoppingCart } from 'use-shopping-cart';
+import { useShoppingCart } from 'use-shopping-cart'
+
+
 
 
 const useStyles = makeStyles({
@@ -21,7 +23,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Dinner(props) {
+export default function Rubs(props) {
   const classes = useStyles();
   const isMobile = useMediaQuery({ query: '(max-device-width: 480px)' })
   var flexDirection;
@@ -38,7 +40,7 @@ export default function Dinner(props) {
   return (
     <StaticQuery
       query={graphql`
-        query Dinner {
+        query Rubs {
           prices: allStripePrice(
             filter: { active: { eq: true } }
             sort: { fields: [unit_amount] }
@@ -75,7 +77,7 @@ export default function Dinner(props) {
                         }
 
             return(
-            price.product.metadata.Menu === "Dinner" &&
+            price.product.metadata.Menu === "Rubs" &&
             <Grid key={price.id} item xs={gridWidth}>
             <Card className={classes.root}>
               <CardActionArea>
