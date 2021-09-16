@@ -112,7 +112,7 @@ const Header = ({ siteTitle }) => {
             padding: '10px'
           }}
         >
-          Spices, Hot Sauce, Seasoning and Rubs
+      Chef Edna's Artisanal Spiced Products
         </Link>
         <Link
           to="/dinner-menu"
@@ -166,7 +166,7 @@ const Header = ({ siteTitle }) => {
           :
           <ShoppingCartIcon/>}
         </Button>
-        <p
+        {/* <p
                   style={{
                     color: `#f6e637`,
                     textDecoration: `none`,
@@ -174,7 +174,7 @@ const Header = ({ siteTitle }) => {
                     padding: `10px`
                   }}>
           {formattedTotalPrice}
-        </p>
+        </p> */}
         {/* <Button
           to="/shopping-cart"
           style={{

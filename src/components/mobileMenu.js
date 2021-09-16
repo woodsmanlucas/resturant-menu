@@ -15,7 +15,7 @@ const MobileMenu = () => {
         padding: '10px'
       }}
     >
-      Spices
+   Chef Edna's Artisanal Spiced Products
     </Link>
     <Link
       to="/dinner-menu"
@@ -29,7 +29,7 @@ const MobileMenu = () => {
     Dinner Menu
     </Link>
     <Link
-      to="/desert-menu"
+      to="/dessert-menu"
       style={{
         color: `#f6e637`,
         textDecoration: `none`,
