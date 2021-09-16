@@ -6,7 +6,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 const MobileMenu = () => {
     return <>
     <Link
-      to="/breakfast-menu"
+      to="/spices"
       style={{
         color: `#f6e637`,
         textDecoration: `none`,
@@ -15,9 +15,9 @@ const MobileMenu = () => {
         padding: '10px'
       }}
     >
-      Spices
+      Chef Edna's Artisanal Spiced Products
     </Link>
-    <Link
+    {/* <Link
       to="/dinner-menu"
       style={{
         color: `#f6e637`,
@@ -38,7 +38,7 @@ const MobileMenu = () => {
       }}
     >
     Dessert Menu
-    </Link>
+    </Link> */}
     {/* <Link
       to="/lunch-menu"
       style={{
@@ -50,7 +50,7 @@ const MobileMenu = () => {
     >
     Lunch Menu
     </Link> */}
-    <Link
+    {/* <Link
       to="/drinks-menu"
       style={{
         color: `#f6e637`,
@@ -60,7 +60,7 @@ const MobileMenu = () => {
       }}
     >
     Drinks Menu
-    </Link>
+    </Link> */}
     <Link
           to="/shopping-cart"
           style={{
